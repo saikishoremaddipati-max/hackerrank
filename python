@@ -1,0 +1,106 @@
+1)https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true
+--------
+print("Hello, World!")
+
+2)https://www.hackerrank.com/challenges/py-if-else/problem?isFullScreen=true
+--------
+n=int(input())
+if n%2!=0:
+    print("Weird")
+elif n>=2 and n<=5:
+    
+    print("Not Weird")
+elif n>=6 and n<=20:
+    print("Weird")
+else:
+    print("Not Weird")
+  
+3)https://www.hackerrank.com/challenges/python-arithmetic-operators/problem?isFullScreen=true
+--------
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+    print(a+b)
+    print(a-b)
+    print(a*b)
+
+4)https://www.hackerrank.com/challenges/python-division/problem?isFullScreen=true
+--------
+a = int(input())
+b = int(input())
+print(a//b)
+print(a/b)
+
+5)https://www.hackerrank.com/challenges/python-loops/problem?isFullScreen=true
+--------
+n = int(input())
+for i in range(n):
+    print(i*i)
+
+6)https://www.hackerrank.com/challenges/write-a-function/problem?isFullScreen=true
+--------
+def is_leap(year):
+    if year % 400 == 0:
+        return True
+    if year % 100 == 0:
+        return False
+    if year % 4 == 0:
+        return True
+    return False
+
+7)https://www.hackerrank.com/challenges/python-print/problem?isFullScreen=true
+--------
+n = int(input())
+for i in range(1,n+1):
+    print(i,end="")
+
+8)https://www.hackerrank.com/challenges/list-comprehensions/problem?isFullScreen=true
+-------
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    # Using list comprehension to generate the coordinates
+    result = [[i, j, k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i + j + k != n]
+    
+    # Printing the result list
+    print(result)
+
+9)https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true
+--------
+n = int(input())
+scores = list(map(int, input().split()))
+
+# Remove duplicates and sort
+unique_scores = sorted(set(scores))
+
+# Print the runner-up score
+print(unique_scores[-2])
+
+10)https://www.hackerrank.com/challenges/nested-list/problem?isFullScreen=true
+---------
+ # Step 1: Read the input
+n = int(input())  # Number of students
+students = []
+
+for _ in range(n):
+    name = input()
+    grade = float(input())
+    students.append([name, grade])
+
+# Step 2: Extract all grades and find the second lowest grade
+grades = sorted(set(grade for name, grade in students))
+
+# The second lowest grade is the second item in the sorted unique grades list
+second_lowest_grade = grades[1]
+
+# Step 3: Find all students with the second lowest grade
+students_with_second_lowest = [name for name, grade in students if grade == second_lowest_grade]
+
+# Step 4: Sort the names alphabetically
+students_with_second_lowest.sort()
+
+# Step 5: Print each name on a new line
+for student in students_with_second_lowest:
+    print(student)
